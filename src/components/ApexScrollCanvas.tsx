@@ -21,7 +21,7 @@ export default function ApexScrollCanvas({
     const [imagesLoaded, setImagesLoaded] = useState(false);
     const [loadProgress, setLoadProgress] = useState(0);
     const currentFrameRef = useRef(0);
-    const animationFrameRef = useRef<number>();
+    const animationFrameRef = useRef<number | undefined>(undefined);
 
     // Transform scroll progress to frame index
     const frameIndex = useTransform(scrollYProgress, [0, 1], [0, totalFrames - 1]);
